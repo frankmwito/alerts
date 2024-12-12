@@ -27,8 +27,10 @@ try:
     
     # locate a specific webelement and take its screenshot
     training_img = driver.find_element(By.XPATH,"//img[@alt='Selenium Online Training']")
+    # screenshot of an element
     training_img.screenshot("C:\\Users\\Gaming 15\\Downloads\\alerts\\test1.png")
-    driver.get_screenshot_as_file("C:\\Users\\Gaming 15\\Downloads\\test2.png")
+    # gets the screenshot of the whole webpage
+    driver.get_screenshot_as_file("C:\\Users\\Gaming 15\\Downloads\\test2.png") 
     
 finally:
     # close the window

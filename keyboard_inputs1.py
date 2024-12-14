@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
-import pyperclip  # For clipboard operations (install with `pip install pyperclip`)
+import pyperclip # For clipboard operations (install with `pip install pyperclip`)
 
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
@@ -28,6 +28,8 @@ try:
     
     # Simulate Ctrl+C (copy selected text)
     search_box.send_keys(Keys.CONTROL + "c")
+    
+    search_box.send_keys(Keys.CONTROL + "v")
     
     # Verify copied text using the clipboard
     copied_text = pyperclip.paste()

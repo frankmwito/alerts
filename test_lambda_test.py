@@ -13,3 +13,16 @@ def test_lambda_test():
         assert "Selenium Grid Online" in driver.title, "Title does not match expected"
     finally:
         driver.quit()
+        
+def test2_lambda_test():
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service)
+    driver.maximize_window()
+    
+    try:
+        driver.get("https://ecommerce-playground.lambdatest.io/")
+        print("Title: ",driver.title)
+        assert "Ecommerce" in driver.title, "Title does not match expected"
+    finally:
+        driver.quit()
+    

@@ -23,6 +23,7 @@ class AssertionsTest(softest.TestCase):
     
         print("Gender Object: \t", id(gender))
         print("Male Object: \t", id("Male"))
-        assert gender is "Male", "Gender Is Not Correct"
-        assert driver.title.__contains__("Selenium Grid Online")
-        assert "51" in age_group, "Age Group Is Not Correct"
+        self.soft_assert(self.assertEqual, gender, "Male", "Gender Is Not Correct")
+        self.soft_assert(self.assertIn, "Selenium Grid Online", driver.title, "Title Does Not Contain Expected Text")
+        self.soft_assert(self.assertIn, "51", age_group, "Age Group Is Not Correct")
+        self.assert_all()

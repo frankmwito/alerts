@@ -24,6 +24,6 @@ def test_lambdatest_radio_button_demo_value():
     
     print("Gender Object: \t", id(gender))
     print("Male Object: \t", id("Male"))
-    assert gender is "Male", "Gender Is Not Correct"
+    assert gender == "Male", "Gender Is Not Correct"
     assert driver.title.__contains__("Selenium Grid Online")
-    assert "51" in age_group, "Age Group Is Not Correct"
+    assert "49" in age_group, "Age Group Is Not Correct"

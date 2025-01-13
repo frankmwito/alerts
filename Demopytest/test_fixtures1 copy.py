@@ -23,10 +23,13 @@ def setup_teardown():
     driver.find_element(By.PARTIAL_LINK_TEXT, "Logout").click()
     print("Logout")
     
-def test1_order_history_title(setup_teardown):
+
+@pytest.mark.usefixtures("setup_teardown")
+def test1_order_history_title():
     driver.find_element(By.PARTIAL_LINK_TEXT, "Order Histo").click()
     assert driver.title == "Order History"
     print("Test 1 Is Complete")
+    
     
 def test2_order_history_title(setup_teardown):
     driver.find_element(By.PARTIAL_LINK_TEXT, "Password").click()
